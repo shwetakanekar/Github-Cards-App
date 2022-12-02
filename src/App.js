@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import CardList from './compponents/CardList';
+import Form from './compponents/Form';
 
 function App() {
+  const [profiles, setProfiles] = useState([]);
+
+  const formSubmitHandler = (newProfile) => {
+    for (let i = 0; i < profiles.length; i++) {
+      if (profiles[i].id === newProfile.id) {
+        alert('This user is already added.');
+        return;
+      }
+    }
+    setProfiles((previousProfiles) => [...previousProfiles, newProfile]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Github Cards App</h1>
+      <Form onFormSubmit={formSubmitHandler} />
+      <CardList profiles={profiles} />
     </div>
   );
 }
