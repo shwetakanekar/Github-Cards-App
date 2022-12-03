@@ -39,12 +39,11 @@ h1 {
 }
 
 form {
-  margin: 2rem 4rem;
+  margin: 2rem auto;
   border: 1px solid #ccc;
   padding: 2rem;
   border-radius: 10px;
   max-width: 22rem;
-  margin: auto;
 }
 
 form > button {
@@ -61,4 +60,26 @@ form > input {
   padding: 0.4rem 1.2rem;
   width: 12rem;
   border: 2px solid #ccc;
+}
+
+@media screen and (max-width: 912px) {
+  .card-list {
+    padding: 2rem 0.2rem;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  form {
+    margin: 2rem 1rem;
+  }
+
+  form > input {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  form > button {
+    margin-left: 0;
+  }
 }
