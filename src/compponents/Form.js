@@ -12,6 +12,7 @@ function Form(props) {
     } else {
       alert(`Invalid username - ${userName}`);
     }
+    setUserName('');
   };
 
   return (
