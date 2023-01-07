@@ -7,7 +7,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   padding: 3rem;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .github-profile {
